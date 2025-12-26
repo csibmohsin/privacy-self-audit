@@ -51,7 +51,7 @@ pip install requests colorama
 
 1️⃣ Clone the Repository
 
-git clone https://github.com/yourusername/privacy-self-audit.git
+git clone https://github.com/csibmohsin/privacy-self-audit
 cd privacy-self-audit
 
 2️⃣ Run the Tool
@@ -60,3 +60,4 @@ python audit.py
 
 Privacy Meter: [███████   ] 72/100
 PRIVACY STATUS: GOOD
+
