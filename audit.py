@@ -20,7 +20,7 @@ def banner():
 ██║     ██║  ██║██║ ╚████╔╝ ██║  ██║╚██████╗   ██║   
 ╚═╝     ╚═╝  ╚═╝╚═╝  ╚═══╝  ╚═╝  ╚═╝ ╚═════╝   ╚═╝   
 
-        PRIVACY SELF-AUDIT TOOL
+        Dev: Mohsin Khawaja
         Tracking & Exposure Analyzer
 -------------------------------------------------------
 """)
@@ -119,3 +119,4 @@ def run_audit():
 
 if __name__ == "__main__":
     run_audit()
+
