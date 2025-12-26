@@ -21,13 +21,13 @@ def banner():
 ╚═╝     ╚═╝  ╚═╝╚═╝  ╚═══╝  ╚═╝  ╚═╝ ╚═════╝   ╚═╝   
 
         PRIVACY SELF-AUDIT TOOL
-       Dev: Mohsin Khawaja
+        Tracking & Exposure Analyzer
 -------------------------------------------------------
 """)
 
 
 def spinner(task):
-    for _ in range(8):
+    for _ in range(6):
         for c in "|/-\\":
             sys.stdout.write(f"\r{Fore.YELLOW}{task}... {c}")
             sys.stdout.flush()
@@ -51,7 +51,7 @@ def privacy_bar(score):
     print(color + "Privacy Meter: [" + "█" * bars + " " * (10 - bars) + f"] {score}/100")
 
 
-# ---------------- MAIN LOGIC ----------------
+# ---------------- MAIN ----------------
 
 def run_audit():
     banner()
@@ -70,7 +70,7 @@ def run_audit():
     report.update(dns_data)
     report.update(host_data)
 
-    score, level, reasons = score_privacy(report)
+    score, level, reasons, recommendations = score_privacy(report)
 
     # -------- OUTPUT --------
 
@@ -107,10 +107,15 @@ def run_audit():
         for r in reasons:
             print(Fore.RED + "- " + r)
 
+    section("How to improve privacy")
+    if not recommendations:
+        print(Fore.GREEN + "Your setup already follows good privacy practices.")
+    else:
+        for rec in recommendations:
+            print(Fore.YELLOW + "- " + rec)
+
     print(Fore.CYAN + "\nAudit complete. Awareness is protection.")
 
-
-# ---------------- ENTRY ----------------
 
 if __name__ == "__main__":
     run_audit()
